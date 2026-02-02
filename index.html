@@ -182,7 +182,7 @@
 
                         {/* Tab Navigation */}
                         <div className="flex gap-2 mb-6 bg-gray-800/50 p-1 rounded-lg backdrop-blur overflow-x-auto">
-                            {['architecture', 'pipeline', 'metrics', 'code', 'impact'].map(tab => (
+                            {['architecture', 'pipeline', 'metrics', 'code', 'usecases'].map(tab => (
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
@@ -192,7 +192,7 @@
                                             : 'text-gray-300 hover:bg-gray-700/50'
                                     }`}
                                 >
-                                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                                    {tab === 'usecases' ? 'Use Cases' : tab.charAt(0).toUpperCase() + tab.slice(1)}
                                 </button>
                             ))}
                         </div>
@@ -607,8 +607,8 @@ print(f"Answer Relevancy: {results['answer_relevancy']:.2%}")  # 80%`}</pre>
                             </div>
                         )}
 
-                        {/* Impact Tab */}
-                        {activeTab === 'impact' && (
+                        {/* Use Cases Tab */}
+                        {activeTab === 'usecases' && (
                             <div className="space-y-6">
                                 {/* Use Cases */}
                                 <div className="bg-gray-800/50 rounded-lg p-6 border-2 border-gray-700">
